@@ -1,12 +1,14 @@
 <template>
   <div>
     <h2>Hello</h2>
-    <div v-for="joke in jokes" :key="joke.id">
-     
-
-    </div>
-      <p @click="newJokes">{{jokes}}</p>
+    <div v-if="jokes">
+        <p @click="newJokes">{{jokes}}</p>
       <button @click="newJokes">Click to get random jokes</button>
+    </div>
+    <div v-else>
+        <p>Loading jokes.....</p>
+    </div>
+      
 
   </div>
 </template>
@@ -15,7 +17,7 @@
 export default {
     data(){
   return {
-       jokes: []    
+       jokes: null  
   }
 },
 methods:{
@@ -27,7 +29,7 @@ methods:{
            this.jokes = response.value
           //  console.log(response)
         })
-        .catch(err => console.log())
+        .catch(err => console.log(err.message))
     },
     newJokes(){
       this.getJokes()
