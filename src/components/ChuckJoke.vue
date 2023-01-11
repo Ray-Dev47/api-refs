@@ -10,7 +10,9 @@
     </div> -->
 
 
-     
+     <ul v-for="post in meowFacts" :key="post.id">
+      <li>{{post.body}}</li>
+     </ul>
       
 
   </div>
@@ -48,6 +50,7 @@ methods:{
          .then(response => this.meowFacts = response.data)
             // this.results = response.data
             //  this.meowFacts = response
+            .catch((err) => console.log(err.message))
        
         
          
