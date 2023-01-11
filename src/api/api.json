@@ -1,7 +1,0 @@
-{
-    "jobs": [
-        {"title": "Python Developer", "id": 1, "details": "lorem 1" },
-        {"title": "Java Developer", "id": 2, "details": "lorem 2" },
-        {"title": "JavaScript Developer", "id": 3, "details": "lorem 3" }
-    ]
-}
